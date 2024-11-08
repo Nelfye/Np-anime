@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Site GitHub Pages</title>
+  <style>
+    /* Style pour l'iframe */
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Iframe qui charge le site externe -->
+  <iframe id="externalSite" src="https://anime-sama.fr/"></iframe>
+
+  <script>
+    // Empêche l'ouverture de nouveaux onglets pour les liens dans l'iframe
+    document.getElementById('externalSite').contentWindow.addEventListener('click', (event) => {
+      if (event.target.tagName === 'A') {
+        event.preventDefault(); // Empêche l'ouverture du lien
+        alert("L'ouverture de nouveaux onglets est bloquée.");
+      }
+    });
+  </script>
+</body>
+</html>
